@@ -13,7 +13,7 @@ df = pd.read_csv('slidestart.csv')
 if 'tags' in df.columns:
     df['tags'] = df['tags'].apply(ast.literal_eval)
 # Convert image_id into ref urls
-df['image_id'] = ['New folder/' + x for x in df['image_id'].tolist()]
+df['image_id'] = ['https://raw.githubusercontent.com/angkj1995/consulting-slides/refs/heads/main/New%20folder/' + x for x in df['image_id'].tolist()]
 
 # Initialize session state for gallery display confirmation
 if 'display_gallery_confirmed' not in st.session_state:
