@@ -34,7 +34,7 @@ with filter_col1:
     st.markdown("""
         <style>
         div[data-baseweb="select"] * {
-            font-size: 10px !important;
+            font-size: 12px !important;
         }
         </style>
     """, unsafe_allow_html=True)
@@ -54,7 +54,7 @@ with filter_col2:
     st.markdown("""
         <style>
         div[data-baseweb="select"] * {
-            font-size: 10px !important;
+            font-size: 12px !important;
         }
         </style>
     """, unsafe_allow_html=True)
@@ -74,7 +74,7 @@ with filter_col3:
     st.markdown("""
         <style>
         div[data-baseweb="select"] * {
-            font-size: 10px !important;
+            font-size: 12px !important;
         }
         </style>
     """, unsafe_allow_html=True)
@@ -94,7 +94,7 @@ with filter_col4:
     st.markdown("""
         <style>
         div[data-baseweb="select"] * {
-            font-size: 10px !important;
+            font-size: 12px !important;
         }
         </style>
     """, unsafe_allow_html=True)
@@ -114,7 +114,7 @@ with filter_col5:
     st.markdown("""
         <style>
         div[data-baseweb="select"] * {
-            font-size: 10px !important;
+            font-size: 12px !important;
         }
         </style>
     """, unsafe_allow_html=True)
@@ -162,35 +162,35 @@ st.markdown(f"<p style='color: #DC267F;'>Total slides: {filtered_df.shape[0]}</p
 summary_col1, summary_col2, summary_col3, summary_col4, summary_col5 = st.columns(5)
 
 with summary_col1:
-    st.markdown("<p style='font-size:12px; font-weight: bold;'>Company Counts</p>", unsafe_allow_html=True)
+    st.markdown("<p style='font-size:14px; font-weight: bold;'>Company Counts</p>", unsafe_allow_html=True)
     company_counts = filtered_df['company'].value_counts().reset_index()
     company_counts.columns = ['Company', 'Count']
-    styled_company_counts = company_counts.style.set_table_attributes('style="font-size:10px"').hide(axis='index')
+    styled_company_counts = company_counts.style.set_table_attributes('style="font-size:12px"').hide(axis='index')
     st.markdown(styled_company_counts.to_html(escape=False), unsafe_allow_html=True)
 
 with summary_col2:
-    st.markdown("<p style='font-size:12px; font-weight: bold;'>Slide Type Counts</p>", unsafe_allow_html=True)
+    st.markdown("<p style='font-size:14px; font-weight: bold;'>Slide Type Counts</p>", unsafe_allow_html=True)
     slide_type_counts = filtered_df['slide_type'].value_counts().reset_index()
     slide_type_counts.columns = ['Slide Type', 'Count']
-    styled_slide_type_counts = slide_type_counts.style.set_table_attributes('style="font-size:10px"').hide(axis='index')
+    styled_slide_type_counts = slide_type_counts.style.set_table_attributes('style="font-size:12px"').hide(axis='index')
     st.markdown(styled_slide_type_counts.to_html(escape=False), unsafe_allow_html=True)
 
 with summary_col3:
-    st.markdown("<p style='font-size:12px; font-weight: bold;'>Industry Counts</p>", unsafe_allow_html=True)
+    st.markdown("<p style='font-size:14px; font-weight: bold;'>Industry Counts</p>", unsafe_allow_html=True)
     industry_counts = filtered_df['industry'].value_counts().reset_index()
     industry_counts.columns = ['Industry', 'Count']
-    styled_industry_counts = industry_counts.style.set_table_attributes('style="font-size:10px"').hide(axis='index')
+    styled_industry_counts = industry_counts.style.set_table_attributes('style="font-size:12px"').hide(axis='index')
     st.markdown(styled_industry_counts.to_html(escape=False), unsafe_allow_html=True)
 
 with summary_col4:
-    st.markdown("<p style='font-size:12px; font-weight: bold;'>Use Case Counts</p>", unsafe_allow_html=True)
+    st.markdown("<p style='font-size:14px; font-weight: bold;'>Use Case Counts</p>", unsafe_allow_html=True)
     use_case_counts = filtered_df['use_case'].value_counts().reset_index()
     use_case_counts.columns = ['Use Case', 'Count']
-    styled_use_case_counts = use_case_counts.style.set_table_attributes('style="font-size:10px"').hide(axis='index')
+    styled_use_case_counts = use_case_counts.style.set_table_attributes('style="font-size:12px"').hide(axis='index')
     st.markdown(styled_use_case_counts.to_html(escape=False), unsafe_allow_html=True)
 
 with summary_col5:
-    st.markdown("<p style='font-size:12px; font-weight: bold;'>Tag Counts</p>", unsafe_allow_html=True)
+    st.markdown("<p style='font-size:14px; font-weight: bold;'>Tag Counts</p>", unsafe_allow_html=True)
     # Tag collector
     all_tags_in_filtered_df = []
     for tag_list in filtered_df['tags']:
@@ -202,7 +202,7 @@ with summary_col5:
     tag_counts_df = pd.DataFrame(tag_counts.items(), columns=['Tag', 'Count'])
     tag_counts_df = tag_counts_df.sort_values(by='Count', ascending=False).reset_index(drop=True)
 
-    styled_tag_counts = tag_counts_df.style.set_table_attributes('style="font-size:10px"').hide(axis='index')
+    styled_tag_counts = tag_counts_df.style.set_table_attributes('style="font-size:12px"').hide(axis='index')
     st.markdown(styled_tag_counts.to_html(escape=False), unsafe_allow_html=True)
 
 
