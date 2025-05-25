@@ -225,7 +225,7 @@ if current_row_count > 300:
         st.warning(f"Displaying {current_row_count} slides may cause the application to lag.")
         if st.button("Continue displaying gallery"):
             st.session_state.display_gallery_confirmed = True
-            st.experimental_rerun() # the script is halted - no more statements will be run, and the script will be queued to re-run from the top
+            st.rerun() # the script is halted - no more statements will be run, and the script will be queued to re-run from the top
     else:
         # If confirmed, display the dataframe
         if not filtered_df.empty:
