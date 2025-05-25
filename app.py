@@ -237,7 +237,7 @@ if current_row_count > 300:
                             'use_case': st.column_config.TextColumn('use_case', width=137),
                             'image_id': st.column_config.ImageColumn('image_id', width='small')
                         },
-                        hide_index=True, row_height=50)
+                        hide_index=True)
         else:
             st.info("No matching data based on the selected filters.")
 else:
@@ -252,6 +252,6 @@ else:
                          'use_case': st.column_config.TextColumn('use_case', width=137),
                          'image_id': st.column_config.ImageColumn('image_id', width='small')
                      },
-                     hide_index=True, row_height=50)
+                     hide_index=True)
     else:
         st.info("No matching data based on the selected filters.")
